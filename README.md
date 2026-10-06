@@ -9,22 +9,23 @@ and anti-bot behavior at any time — **expect this to break without notice**.
 
 ## Install
 
-```bash
-npm install -g @steipete/bird
-# or
-pnpm add -g @steipete/bird
-# or
-bun add -g @steipete/bird
+This repository republishes [Peter Steinberger](https://github.com/steipete)'s bird 0.8.0 after the original
+`steipete/bird` repository, Homebrew formula, and npm package were withdrawn. The full upstream history is preserved.
 
-# one-shot (no install)
-bunx @steipete/bird whoami
-```
-
-Homebrew (macOS, prebuilt Bun binary):
+Homebrew (macOS, signed and notarized universal binary):
 
 ```bash
-brew install steipete/tap/bird
+brew install zm2231/tap/bird
 ```
+
+npm, from GitHub Packages (requires a GitHub token with `read:packages`):
+
+```bash
+echo "@zm2231:registry=https://npm.pkg.github.com" >> ~/.npmrc
+npm install -g @zm2231/bird
+```
+
+Release binaries are attached to each [GitHub release](https://github.com/zm2231/bird/releases).
 
 ## Quickstart
 
@@ -128,7 +129,7 @@ By default, the command fetches from For You, News, Sports, and Entertainment ta
 `bird` can be used as a library (same GraphQL client as the CLI):
 
 ```ts
-import { TwitterClient, resolveCredentials } from '@steipete/bird';
+import { TwitterClient, resolveCredentials } from '@zm2231/bird';
 
 const { cookies } = await resolveCredentials({ cookieSource: 'safari' });
 const client = new TwitterClient({ cookies });

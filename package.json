@@ -1,7 +1,14 @@
 {
-  "name": "@steipete/bird",
+  "name": "@zm2231/bird",
   "version": "0.8.0",
   "description": "CLI tool for tweeting and replying via Twitter/X GraphQL API",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zm2231/bird.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,7 +39,8 @@
     "lint:oxlint:fix": "oxlint --type-aware --tsconfig tsconfig.oxlint.json --import-plugin --node-plugin --vitest-plugin --deny-warnings --fix src tests scripts",
     "format": "biome format --write .",
     "binary": "pnpm run build:binary",
-    "graphql:update": "tsx scripts/update-query-ids.ts"
+    "graphql:update": "tsx scripts/update-query-ids.ts",
+    "release:macos": "scripts/release-macos.sh"
   },
   "dependencies": {
     "@steipete/sweet-cookie": "0.1.0",
