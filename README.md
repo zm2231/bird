@@ -15,7 +15,7 @@ This repository republishes [Peter Steinberger](https://github.com/steipete)'s b
 Homebrew (macOS, signed and notarized universal binary):
 
 ```bash
-brew install zm2231/tap/bird
+brew install --cask zm2231/tap/bird
 ```
 
 npm, from GitHub Packages (requires a GitHub token with `read:packages`):
